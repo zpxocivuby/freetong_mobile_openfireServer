@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file stores bootstrap properties needed by Openfire. Property names 
+	must be in the format: "prop.name.is.blah=value" That will be stored as: 
+	<prop> <name> <is> <blah>value</blah> </is> </name> </prop> Most properties 
+	are stored in the Openfire database. A property viewer and editor is included 
+	in the admin console. -->
+<!-- root element, all properties must be under this element -->
+<jive> 
+  <adminConsole> 
+    <!-- Disable either port by setting the value to -1 -->  
+    <port>9090</port>  
+    <securePort>9091</securePort> 
+  </adminConsole>  
+  <locale>zh_CN</locale>  
+  <!-- Network settings. By default, Openfire will bind to all network interfaces. 
+		Alternatively, you can specify a specific network interfaces that the server 
+		will listen on. For example, 127.0.0.1. This setting is generally only useful 
+		on multi-homed servers. -->  
+  <!-- <network> <interface></interface> </network> -->  
+  <connectionProvider> 
+    <className>org.jivesoftware.database.DefaultConnectionProvider</className> 
+  </connectionProvider>  
+  <database> 
+    <defaultProvider> 
+      <driver>com.mysql.jdbc.Driver</driver>  
+      <serverURL>jdbc:mysql://192.168.0.189:3306/itaf?characterEncoding=UTF-8&amp;rewriteBatchedStatements=true</serverURL>  
+      <username encrypted="true">e80b0b10270793d0a196d02e29d7aea161959ce2879fb1cb</username>  
+      <password encrypted="true">becfa0c5adf17f445e8b89a34e3c7f6681d71d7cc2fe9cc7</password>  
+      <testSQL>select 1</testSQL>  
+      <testBeforeUse>false</testBeforeUse>  
+      <testAfterUse>false</testAfterUse>  
+      <minConnections>50</minConnections>  
+      <maxConnections>200</maxConnections>  
+      <connectionTimeout>1.0</connectionTimeout> 
+    </defaultProvider> 
+  </database>  
+  <setup>true</setup> 
+</jive>
